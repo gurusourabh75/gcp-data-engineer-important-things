@@ -22,6 +22,11 @@
 
 
 
---- to remenber 
+--- to remember 
 --  check the schema of structure of the csv we the google cloud  structure 
 -- and udf with java file  same should have to match with  google cloud structure 
+
+--- to remember 
+-- some time google gloud back have same old files  even u replace with new file in gcs 
+-- when projecdt go wrong  use cmd to clean all the data  buld data and start fresh 
+
