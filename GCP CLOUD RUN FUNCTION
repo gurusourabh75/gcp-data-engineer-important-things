@@ -1,0 +1,48 @@
+- cloud run function  lets brake down 
+
+What is Cloud Run?
+
+- Cloud Run lets you run your code (as a container) on Google’s servers —
+You don’t have to manage any machines, and it automatically scales up or down.
+- You package your code into a Docker container
+- You deploy it to Cloud Run
+- It runs on demand (e.g., when a request or event happens)
+- Think of it like:“Google runs my app for me when something happens, and I only pay when it runs.”
+
+
+
+What is Cloud Run Functions?
+
+- Google added a simpler way to use Cloud Run — just like Cloud Functions — but under the hood, it runs on Cloud Run.
+- You write your code normally (e.g., in Python, Node.js, Go), and Google automatically:
+- Wraps it in a container 
+- Deploys it to Cloud Run 
+- Sets up an HTTPS endpoint or event trigger 
+-So Cloud Run Functions = “Cloud Functions style development + Cloud Run infrastructure”
+
+
+
+
+For triggering a file to bigquary we need :
+
+1. Create Cloud Storage Bucket
+2. Create Service Account
+3. Create BigQuery Dataset
+4. Create Cloud Run Function
+5. Deploy the Cloud Run Function
+6. Test the function by uploading sample csv data into GCS bucket
+7. Check results in Google
+
+
+and also should enable IAM service account to use cloud eun function  with  following  services they are :
+
+BigQuery Data Editor
+BigQuery Job User
+Cloud Functions Invoker
+Cloud Run Invoker
+Eventarc Event Receiver
+Logs Writer
+Storage Object Viewer
+
+
+
