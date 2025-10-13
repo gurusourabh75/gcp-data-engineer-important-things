@@ -1,0 +1,27 @@
+" Google Cloud Dataflow is a service that moves and processes data automatically "
+
+- Handles huge volumes automatically 
+- Can work with real-time or batch data 
+- Scales up/down for you (no servers to manage) 
+- Lets you apply transformations (e.g., filtering, cleaning, formatting) before saving the data.
+
+
+- In GCP we don't need to write complete code , gcp have inbuilt template  for both streaming data and batch processing data 
+
+- Imagine you run a cricket stats website 
+-Every night, you get a CSV file with the latest player rankings.
+-You want that CSV to go into BigQuery so analysts can query it.
+-But before loading, you need to:
+-Clean the data 
+-Reformat it 
+-Match the schema in BigQuery.
+- Instead of doing this manually every day,
+-you create a Dataflow pipeline that says:
+- When a file arrives in Cloud Storage →  clean & format → send to BigQuery.”
+-Then Dataflow will do it automatically every time, even if the file is huge.
+
+
+
+--- to remenber 
+--  check the schema of structure of the csv we the google cloud  structure 
+-- and udf with java file  same should have to match with  google cloud structure 
