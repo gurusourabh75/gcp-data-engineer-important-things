@@ -1,1 +1,40 @@
+we have spotify data in gcs from that we brought inro biqquary dataset with alreasy table 
+
+
+ medallion architure 
+
+# bronz layer 
+---- null handling --- track name shoulfd not have to be null 
+----de-duplication -- remove the duplicates 
+---- un-nessary coloumns ---
+---- aggresion ---- like converting  mili secounds into sec 
+
+
+* always first write ur base query 
+
+
+
+# SILVER  layer 
+-
+
+
+
+
+
+
+
+
+
+
+
+
+# gold layer 
+
+
+
+
+
+
+
+
 
