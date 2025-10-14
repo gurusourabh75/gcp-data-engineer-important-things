@@ -1,0 +1,6 @@
+DISTINECT -- it shows unique value in the column 
+IS NOT NULL --   it shows the not null valus 
+aggresion -- is noting but converting  mile sesc into secounds 
+ORDER BY  ---  complete row in order --- if u use DESE OR AESE  so that higher or lower value what we need we will get 
+GROUP BY --- same as order by 
+count ( ) as  new_column -- count  caluclate no of objects repets 
