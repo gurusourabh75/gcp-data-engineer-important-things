@@ -22,10 +22,67 @@ things we can do in bigquary
 
 
  since bigqueary  pricing model is based on size of  data 
- so partitioning help in saving the money 
+ there are two storage optimizatin are there 
+1 partitioning 
+2 clusterning 
 
 
  partitioning 
 
- dividing large data into smaller chunks 
- 
+
+
+-dividing large data into smaller chunks 
+-it easy to manage / quary 
+-due to partictioing we get good performance 
+-it can be done when creating the table 
+-u can convert already existing table in to partictioning 
+- cost control 
+
+partictioning are classifird into two types 
+
+1 integer range part 
+2 time unit part
+3 injection time part
+
+1 . integer range ==
+  column -id int 
+creteria :
+ start :1
+ end :100
+interval :10  
+
+2. tme unit column 
+ column -dob (datetime)
+part accourding to  hour , days , months , yers 
+
+3. injection part 
+
+column -ingest  at a perticlar time 
+creteria:
+ hour ,days,mountly , year 
+
+
+particationing limitation 
+
+- parting column can br only once 
+- parting column can be only-> int ,datetime ,injection time 
+- it cant be done in  string , float ,book 
+
+
+
+
+
+
+clustering 
+
+- organzing /sorting the table  with one or more columns 
+
+limitation :
+- max four columns can be clustred in a data 
+-clustering columns can  done in string , int , data ----
+- cannot be done in flot 
+
+
+- our cgo for both clustering and partictiong and  if u like to go only parting or only clustering 
+
+
