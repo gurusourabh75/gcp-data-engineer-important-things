@@ -1,0 +1,31 @@
+Big Quary is  google modern warehouse and biqdata tool 
+its is serverless no neeed to create a cluster 
+it is higly scalable ( storage + compute)
+to work with large data and datasets 
+bigquary come with bilt in sql enginer 
+here we only store data structure only 
+we can dirrectly go for development 
+biqquary store data in columnary 
+bigquary process terabit of data in miinits and petabit of data in secouds
+
+
+things we can do in bigquary 
+- collect the data from  both streamning and batch processing 
+-it gives both real time and batch processing 
+- process and transform 
+- analysis 
+
+ in biguary mmain focus is  
+ - madillion archithure 
+ - gold , sliver , bronze layer 
+ - clusterung and partictuning of data 
+
+
+ since bigqueary  pricing model is based on size of  data 
+ so partitioning help in saving the money 
+
+
+ partitioning 
+
+ dividing large data into smaller chunks 
+ 
