@@ -1,0 +1,89 @@
+BIG QUEARY  with json https://gdg.community.dev/events/details/google-gdg-hyderabad-presents-gdg-hyderabad-devfest-2024/
+
+Jason data is like key and value base data 
+
+ 1 simple json data 
+ 2 string = jason data 
+ 3 string + list+ jason data                                                                               # if u have space in ur columns  names then u have to use `` back quots  
+ 4 json schema
+
+
+
+----------------------------------  SIMPLE JASON DATA -------------------------------------
+
+
+ to load sample json data into table inside dataset  you have to define schema  for that 
+
+example :  
+
+       CREATE TABLE `swift-park-474909-f8.json_dat.EX-1` (
+   empId INT64,
+   empName STRING,
+   empGender STRING,
+   empSalary FLOT64 ,
+   empCountry STRING
+);
+
+
+ and loading into table we have  to define 
+
+
+
+LOAD DATA INTO
+  `swift-park-474909-f8.json_dat.EX-1`                               # table name 
+FROM FILES (
+FORMAT = 'JSON',                                                     # file formate 
+    URIS=["gs://biquary-class/simpleJson.json"]                      #  filw g sutil url 
+);
+
+
+
+
+--------------------------- string+ inside jason data-------------------------------------
+
+
+data look like === {"customer_id":"C00001",
+  "email":"dabby2y@japanpost.jp",
+  "profile":"{\"first_name\":\"Dniren\",\"last_name\":\"Abby\",\"gender\":\"Female\",\"address\"
+  :{\"street\":\"768 Mesta Terrace\",\"city\":\"Annecy\",\"country\":\"France\"}}",                                                        # here we have string inside  jason  
+  "updated":"2021-12-14T23:15:43.375Z"}
+
+
+
+
+-- we get this kind of data they ask to pass this  kind of data into bigquaery    - from there into ml or looker 
+
+
+- in profile data   we have string  values 
+- in that case bigquary brought  a function called ""JSON_VALUE "" FUNCTION 
+ example : 
+
+
+   SELECT customer_id,
+ email,
+ JSON_VALUE(profile,'$.first_name') as first_name,
+ JSON_VALUE(profile,'$.last_name') as last_name ,
+ JSON_VALUE(profile ,'$.gender') as gender,
+ JSON_VALUE(profile ,'$.address.street') as street,
+ JSON_VALUE(profile ,'$.address.city') as city,
+ JSON_VALUE(profile ,'$.address.country') as country,
+FROM `swift-park-474909-f8.json_dat.EX-2`
+ LIMIT 10;
+
+
+
+
+-----------------------array + string  jason data-------------------------------------------- 
+
+
+
+
+ here we use json_extract_array 
+
+1:02:33
+
+
+
+
+ 
+
