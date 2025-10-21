@@ -34,7 +34,6 @@ problems :
 - if 2 or 3 steps fail we have start from starting 
 -  we have to stat multiple time 
 - to schedule job at perticular time 
-- 
 
 
 where can we use this :
@@ -52,4 +51,27 @@ DAGS :
 - a----> b----  a-------> c   acyclic 
 - a----> b---- > c -------> a  cyclic 
 - dags folder is main folder in airflow 
-- 
+
+scheduler :
+
+-responsible for  scanning all dags files in dags and tasks are up to date  ensure all dags and tasks are up to  data
+- handles the scheduling  intervals 
+- @ daily @ montly @ hourly @ weekly @ quarterly 
+- @ yearly @  every 15 minutes ( cron expression ) 
+
+
+metadata db 
+
+-  it is used to store the DAG information  like structure  , schedule and defaullt  argument 
+- mostly mysql and postgress is used 
+
+
+
+ webserver 
+
+- it is the key component of apache workflow the hosts the web based ui 
+- it will allow  users  to interact with workflows
+
+executor :
+
+- local and remote base 
