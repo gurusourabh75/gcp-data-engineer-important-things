@@ -1,0 +1,55 @@
+--------------------- airflow --------------------------------------------
+
+
+
+-- airflow is designed for orchestrating complex workflow and data pipline 
+-- its is an open source  for programmatically  authoring , acheduling , and monitoring workflows 
+-- its allow users  to define complex  data piplines as DAG(DIRECT acyclic graph) using python 
+
+
+feature :
+
+- we can write in python 
+-  it have integration like aws cloud , gcp , azure  can also connect to data base 
+-  small jobs to heavy workloads in cloud 
+- user friendly interface 
+- it have own web base ui u can see dags and pipline 
+
+
+most use cases 
+
+- orchestration  batch etl jobs 
+- automatic pipline excucation and monitoring 
+- mechine learning models support 
+- generating automatic reports 
+- manages deploy task 
+
+
+-------------> extract ----------> clean-------------------> transform ------------------------>load 
+
+
+
+problems :
+
+- if 2 or 3 steps fail we have start from starting 
+-  we have to stat multiple time 
+- to schedule job at perticular time 
+- 
+
+
+where can we use this :
+
+
+- batch etl pipline - automatic
+- mechine learning  train /testing pipline 
+- not sutibkw for real time data 
+
+
+
+DAGS :
+
+- EVERY  dag have multi task  dags means direct acylic graph 
+- a----> b----  a-------> c   acyclic 
+- a----> b---- > c -------> a  cyclic 
+- dags folder is main folder in airflow 
+- 
