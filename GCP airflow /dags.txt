@@ -1,0 +1,40 @@
+ commonly used thing  when u start to write a dags 
+  
+
+
+# import all the libary 
+
+  
+import airflow
+from airflow import DAG
+from datetime import datetime, timedelta
+from airflow.utils.dates import days_ago
+
+
+
+# define default argument 
+
+project_id="swift-park-474909-f8"
+location="us"
+bucket_name="comp-dag-test"
+dataset_name_1="insight_ds"
+dataset_name_2="raw_ds"
+table_name_1="emp_data"
+table_name_2="dept_data"
+table_name_3="empdata_insight"
+
+
+
+
+# define dags 
+
+
+
+
+# define the tasks
+
+
+
+
+
+# define task dependencies 
