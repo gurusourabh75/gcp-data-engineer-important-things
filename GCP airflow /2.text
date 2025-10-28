@@ -37,3 +37,34 @@ orchestration:
 
 
 aiflow
+
+
+
+DAG:
+directed :
+acrayclic :
+graph :
+
+
+
+how to create dags:
+
+Create Dag :
+1. import all the modules, libraries,..
+
+2. define the DAG:
+a. DAG ID,
+b. schedule, interval, startdate (cron job format)
+c. retry, 
+d. owner
+
+3. define tasks:
+a. task-id
+b. operator (GcsToBigqueryOperator), parameters
+
+4. define Dependency:
+a. bitshift operator (»)
+b. t1 >> t2 >> t3 >> t4
+c. t1 » (t2, t3) »> t4
+
+
