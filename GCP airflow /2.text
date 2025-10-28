@@ -1,0 +1,39 @@
+---------cloud composer ------------------
+
+
+its is fully managed 
+workflow orechestration services 
+it based on apache airflow 
+designed for creating ,scheduling ,managing m monitoring complex workfow services 
+ its is  based on python , only processed  batch piplinen not streaing dta 
+ DAGS  - DIRECTED ACARALIC GRAPHS 
+ workflow = dag  = series of task
+ common uses 
+   data processing pipline ,scheduliing
+   etl ,workflow 
+   automate rotine task 
+   infrastructure automation
+
+
+
+in airflow we have 5 coompents 
+
+1 dag folder 
+2 sechedular 
+3 executor 
+4 webserver 
+5 metadata db 
+
+
+to automate sql jobs pyspark jobs beam piplie python jobs  we need dag 
+
+
+orchestration:
+
+--- correct order 
+-- sxheduled 
+-- managed dependencies 
+-- handling error or retires 
+
+
+aiflow
