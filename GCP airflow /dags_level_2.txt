@@ -1,0 +1,133 @@
+here we deal with pyspark  
+
+
+ composer to dags  in data proc 
+
+---> we have to create cluster 
+---> next it have to complete task 
+--->  next it have to delete the cluster 
+
+  
+************  defore make sure the 3 main api for data proc is turn on 
+
+1. compute engine api
+2. dataproc api 
+3. cloud resources manger api 
+
+ and also go to vpc and also subnets  turn on google privete acess 
+
+
+
+------------------<  code >-----------------------------------------------------------------------------------
+
+import airflow
+from airflow import DAG
+from datetime import timedelta
+from airflow.utils.dates import days_ago
+from airflow.providers.google.cloud.operators.dataproc import (
+    DataprocCreateClusterOperator,
+    DataprocDeleteClusterOperator,
+    DataprocSubmitJobOperator,
+)
+
+# Define variables
+PROJECT_ID = "swift-park-474909-f8"
+REGION = "us-central1"
+CLUSTER_NAME = "demo-cluster"
+
+CLUSTER_CONFIG = {
+    "master_config": {
+        "num_instances": 1,
+        "machine_type_uri": "n1-standard-4",
+        "disk_config": {
+            "boot_disk_type": "pd-standard",
+            "boot_disk_size_gb": 50,
+        },
+    },
+    "worker_config": {
+        "num_instances": 2,
+        "machine_type_uri": "n1-standard-4",
+        "disk_config": {
+            "boot_disk_type": "pd-standard",
+            "boot_disk_size_gb": 50,
+        },
+    },
+}
+
+# PySpark job configurations
+GCS_JOB_FILE_1 = "gs://comp-dag-test/dummy_pyspark_job_1.py"
+PYSPARK_JOB_1 = {
+    "reference": {"project_id": PROJECT_ID},
+    "placement": {"cluster_name": CLUSTER_NAME},
+    "pyspark_job": {"main_python_file_uri": GCS_JOB_FILE_1},
+}
+
+GCS_JOB_FILE_2 = "gs://comp-dag-test/dummy_pyspark_job_2.py"
+PYSPARK_JOB_2 = {
+    "reference": {"project_id": PROJECT_ID},
+    "placement": {"cluster_name": CLUSTER_NAME},
+    "pyspark_job": {"main_python_file_uri": GCS_JOB_FILE_2},
+}
+
+# Default arguments for the DAG
+ARGS = {
+    "owner": "Ayaan",
+    "start_date": days_ago(1),
+    "depends_on_past": False,
+    "email_on_failure": True,
+    "email_on_retry": True,
+    "email_on_success": True,
+    "email": ["reddyayaan74@gmail.com"],
+    "retries": 1,
+    "retry_delay": timedelta(minutes=5),
+}
+
+# Define the DAG
+with DAG(
+    dag_id="level_2_dag",
+    schedule_interval="0 5 * * *",
+    description="DAG to create a Dataproc cluster, run PySpark jobs, and delete the cluster",
+    default_args=ARGS,
+    tags=["pyspark", "dataproc", "etl", "marvel"],
+    catchup=False,
+) as dag:
+
+    # Define tasks
+    create_cluster = DataprocCreateClusterOperator(
+        task_id="create_cluster",
+        project_id=PROJECT_ID,
+        cluster_config=CLUSTER_CONFIG,
+        region=REGION,
+        cluster_name=CLUSTER_NAME,
+    )
+
+    pyspark_task_1 = DataprocSubmitJobOperator(
+        task_id="pyspark_task_1",
+        job=PYSPARK_JOB_1,
+        region=REGION,
+        project_id=PROJECT_ID,
+    )
+
+    pyspark_task_2 = DataprocSubmitJobOperator(
+        task_id="pyspark_task_2",
+        job=PYSPARK_JOB_2,
+        region=REGION,
+        project_id=PROJECT_ID,
+    )
+
+    delete_cluster = DataprocDeleteClusterOperator(
+        task_id="delete_cluster",
+        project_id=PROJECT_ID,
+        cluster_name=CLUSTER_NAME,
+        region=REGION,
+        trigger_rule="all_done",  # ensures deletion happens even if jobs fail
+    )
+
+    # Task dependencies
+    create_cluster >> pyspark_task_1 >> pyspark_task_2 >> delete_cluster
+
+
+
+-----------------------------------------------------------------------------------------------------
+
+# in py spark if creating cluster is faild then check the premission  wheather  storage bucket,create 
