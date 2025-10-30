@@ -1,3 +1,17 @@
-here we deal with pyspark 
+here we deal with pyspark  
+
+
+ composer to dags  in data proc 
+
+---> we have to create cluster 
+---> next it have to complete task 
+--->  next it have to delete the cluster 
 
   
+************  defore make sure the 3 main api for data proc is turn on 
+
+1. compute engine api
+2. dataproc api 
+3. cloud resources manger api 
+
+ and also go to vpc and also subnets  turn on google privete acess 
