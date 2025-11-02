@@ -1,0 +1,41 @@
+i am ------> identity access managment 
+
+We all love building pipelines that move data from one place to another —
+but one mistake in permissions can expose sensitive data or break your production workflows ⚠️
+
+That’s why Identity and Access Management (IAM) is a must-have skill for every Data Engineer on GCP.
+🧩 What is IAM?
+IAM in GCP lets you control who can access what resources and how.
+Every service account, user, or group should get just enough access — nothing more, nothing less.
+This is called the principle of least privilege.
+⚙️ Example: Service Account for Dataflow
+Instead of using your personal account,
+create a dedicated service account for Dataflow with only the required roles 👇
+Copy code
+Bash
+gcloud iam service-accounts create dataflow-sa \
+ --display-name="Dataflow Service Account"
+
+gcloud projects add-iam-policy-binding my-project \
+ --member="serviceAccount:dataflow-sa@my-project.iam.gserviceaccount.com" \
+ --role="roles/dataflow.worker"
+
+gcloud projects add-iam-policy-binding my-project \
+ --member="serviceAccount:dataflow-sa@my-project.iam.gserviceaccount.com" \
+ --role="roles/storage.objectViewer"
+✅ Can run Dataflow
+✅ Can read from GCS
+❌ Can’t modify other project resources
+💡 Why It Matters
+Protects sensitive data (like PII and financial records)
+Prevents accidental deletions or security breaches
+Keeps your environment audit-ready and compliant
+🔥 Pro Tip
+Create separate service accounts for each pipeline:
+Dataflow SA → limited to job and storage read
+BigQuery SA → limited to query or dataset write
+Composer SA → limited to orchestration and monitoring
+This avoids cross-access and improves traceability.
+💬 Question for you:
+Do you use one shared service account across your pipelines,
+or have you implemented the least privilege principle in production?
