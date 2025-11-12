@@ -8,9 +8,23 @@ where database is classfied into
 2.non rational database 
 
 
+
 rational database : always store  the data in tablular formate ( ex  mysql postgrs sql )
 
 non rational database : thre are data without no tables ( mangobd )
+
+
+///
+
+///
+
+///
+
+
+
+
+
+
 
 
 sql used to perform some operation : CRUD
@@ -19,6 +33,12 @@ create
 read
 update
 delete
+
+
+///
+
+//
+
 
 
 sql commend types :
@@ -32,6 +52,12 @@ dml : data manuplucation language :change and manuplaicate the data - cmd is use
 dcl : data control language : manage permission and access 
 
 tcl trancation control lauguages :handdles the transations ( commit , rollback ) advance db operation 
+
+
+///
+
+
+//
 
 
 
@@ -50,7 +76,9 @@ VARCHAR :  varchar is same as  char can store the name , place ,charctera
 BLOB : can store up to 65535 , can store binary upto large object 
 
 
+///
 
+//
 
 
 
@@ -88,7 +116,30 @@ unsigned : unsigned in allow only positive numbers ( increasing range )
 
 
 
+///
 
+
+///
+
+
+
+CMD 
+
+
+to create data base 
+- CREATE DATABASE example;
+
+
+to drop database 
+- DROP DATABASE exapmle;
+
+
+to  use collage datable then 
+-  USE collage; 
+
+
+to insert data into table we have to use 
+- INSERT INTO student VALUES ( ,   );
 
 
 
