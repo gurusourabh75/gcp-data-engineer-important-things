@@ -1,0 +1,96 @@
+sql structured queary language 
+
+- a software that is used to manage our database is called data dbms (database management system)
+
+
+where database is classfied into 
+1. rationl database 
+2.non rational database 
+
+
+rational database : always store  the data in tablular formate ( ex  mysql postgrs sql )
+
+non rational database : thre are data without no tables ( mangobd )
+
+
+sql used to perform some operation : CRUD
+
+create 
+read
+update
+delete
+
+
+sql commend types :
+
+ddl :data defination language : defines data and schema it have commends like  create , drop , alter , rename,truncate 
+
+dql :data queary language : used to view the data  and cmd is view data 
+
+dml : data manuplucation language :change and manuplaicate the data - cmd is used are insert and update , delete data 
+
+dcl : data control language : manage permission and access 
+
+tcl trancation control lauguages :handdles the transations ( commit , rollback ) advance db operation 
+
+
+
+ sql  data types :
+
+CHAR  : name , city , charcter   and (0 to 255) size can be stored  
+    - it take the place complectly evn the place is full 
+
+
+
+VARCHAR :  varchar is same as  char can store the name , place ,charctera 
+    - can store at given length ( o to 255) 
+    - it store  according to the place it fits and remaining place will be left 
+
+
+BLOB : can store up to 65535 , can store binary upto large object 
+
+
+
+
+
+
+numerical type :
+
+INT :  can store  integers  vulues both   +ve ,-ve  values 
+
+TINY INT : integers between -128 to 127 
+
+bit :BIT(1) → {0, 1}
+
+     BIT(2) → {00, 01, 10, 11}
+
+    BIT(3) → {000, 001, 010, 011, 100, 101, 110, 111
+
+
+FLOAT :  float is noting but decimal values , pression upto 23 digits 
+
+DOUBLE : means large decimal values 
+
+
+
+OTHER TYPES :
+
+BOOL : is nothing but true or false o, 1 or 0 , use tiny int in mysql 
+
+DATE :  year , month , day 
+
+
+SIGNED OR UNSIGNED :
+
+signed : signed allowes  negative and positive numbers(defalult )
+
+unsigned : unsigned in allow only positive numbers ( increasing range )
+
+
+
+
+
+
+
+
+
