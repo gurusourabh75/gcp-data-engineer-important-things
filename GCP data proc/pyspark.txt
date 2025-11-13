@@ -1,3 +1,52 @@
 Data proc work on pyspark engine
 
 
+why an individual should look into and learn pyspark 
+
+1.Industry Demand: Spark is currently in huge demand for data engineers, as well as data analysts and data scientists
+
+2.Differentiating Skills Against AI: Since generative AI is on the rise and can write any type of code needed, students must acquire skills that provide a difference.
+This requires moving beyond merely writing code to focusing on the necessary understanding of how and why the things are important and how the things work in the background
+
+3.Real-World Application: The instructor promises to share many tips and tricks that are used in a general production scenario when we work with spark
+
+spark : 
+- an open source unified computing engine for parallel data transfer 
+- it support major language like python and java and scala 
+- 100 times faster than hadoop 
+- process data using graph ( in memory )
+
+
+
+spark components : 
+
+- RDD-----> low level api 
+- data frames --------> structured api 
+-data structure -------->
+
+
+
+how spark works :
+
+1. What are Driver and Executors?
+2. What is JOBs, Stages & Tasks?
+
+
+                  ┌─► STAGE ─┬─► TASK
+JOB ──────────────┤          ├─► TASK
+                  └─► STAGE ─┴─► TASK
+
+
+
+driver : 
+
+ - heart  of spark application 
+- maintain information   excuitor 
+- it analysis , schedule , distributes the work 
+- brakes the job into stages and task 
+
+excuitor 
+
+- excuites the code 
+- respond the driver with excuition 
+
