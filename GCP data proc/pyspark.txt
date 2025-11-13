@@ -22,7 +22,7 @@ spark components :
 
 - RDD-----> low level api 
 - data frames --------> structured api 
--data structure -------->
+-dataset
 
 
 
@@ -50,3 +50,108 @@ excuitor
 - excuites the code 
 - respond the driver with excuition 
 
+
+
+////////////////////////////3//////////////////////////////
+
+
+
+what is partition?
+
+- to allow every executors to work in parallel , spark break down the data into smaller chunks called partition 
+
+
+
+# what is transformation ?
+
+- the instruction or code to modify and transform data is know  as transformation
+
+ex select , where ,groupBY
+
+transformation are of two types
+
+1.narrow transformation
+2.wide transformation
+
+
+
+
+
+
++-----------+
+|   Emp     |
+|   Data    |
++-----------+
+     |
+     |  Where Sal > 10000 (Filter)  
+     v
++-----------+
+|   Data 1  |
++-----------+
+     |
+     |  Select emp data , deptid, salary (Projection)   
+     v
++-----------+
+|   Data 2  |
++-----------+
+     |
+     |  group By dept_id (Aggregation)          
+     v
++-----------+
+| Final data|
++-----------+
+
+ # narrow Transformation
+A narrow transformation is characterized by the relationship between the input data partitions and the resulting data partitions.
+• In a narrow transformation, one data partition contributes to only one data partition.
+• It can be described as contributing to at most one partition
+
+
+#Wide Transformation
+A wide transformation involves a more complex relationship between the partitions, often requiring data movement across the cluster.
+• In a wide transformation, one partition can contribute to more than one partitions
+
+
+
+
+# actions 
+
+Spark actions are crucial components in the Spark execution workflow, as they are responsible for triggering the actual computation defined by the preceding transformations.
+Definition and Purpose
+Actions are required in order to execute the logical plan that transformations create.
+• Actions basically trigger the execution plan.
+• The overall workflow involves defining the modifications to the data using transformations (like select, where, and Group by), which builds the logical plan. Once an action is called, the execution of this plan begins.
+Role in Lazy Evaluation
+The function of actions is inseparable from Spark's preference for lazy evaluation.
+• Spark prefers lazy evaluation, meaning it will wait till the last moment to execute its computational graph (the transformational logical plan).
+• Spark will wait until an action is called, and only when an action is called does the transformation graph get executed.
+• This waiting is necessary to allow Spark to optimize and plan the resources properly, which leads to executional benefits.
+Types of Actions
+There are basically three types of common actions:
+1. To view the data in the console.
+2. To collect the data in Native languages.
+3. If we write the data in output data sources.
+Illustrative Example
+To understand the necessity of actions in the context of lazy evaluation, the sources provide an analogy of a sandwich shop:
+• If a customer orders a sandwich (the transformations) but keeps changing the order, resources would be wasted if preparation started immediately.
+• The payment is analogous to the action. Once the payment is done (the action is called), the order is locked, the computational plan is finalized, and the shop can then make the sandwich in a more optimized way.
+In summary, while transformations define what needs to be done, the action is the command that says do it now, forcing Spark to stop accumulating the logical steps and execute the entire computational graph.
+
+
+
+
+# spark session 
+
+
+The Spark session is a fundamental component in Spark execution.
+Based on the sources, here is an explanation of the Spark session:
+1. Entry Point and Responsibility:
+    ◦ The Spark session is basically the entry point for the Spark execution.
+    ◦ It is responsible to execute code in the cluster.
+2. Relationship to the Driver:
+    ◦ Drawing on a previous example, the instructor was the driver, and that driver process is the spark session.
+3. Uniqueness:
+    ◦ For one spark application, there can be only one spark session.
+4. Context:
+    ◦ Understanding the Spark session is considered an important topic, along with partitions, transformation, action, and why Spark prefers lazy evaluation, before jumping into coding and hands-on work. Although the concept may still be confusing initially, the sources indicate that it will be seen elaborately in hands-on sessions.
+ 
