@@ -186,6 +186,20 @@ DataFrames are immutable, which is a key concept:
 A DataFrame can be thought of as a spreadsheet with a defined structure (the schema), but where every change you make doesn't erase the original sheet; instead, it generates a perfectly new, optimized version for Spark to process in parallel.
 
 
+** data frames is the most  structured api  represent table 
+-  table represent rows and columns 
+- dataframe have schema , which is the metadata of the columns 
+- data in dataframe  are in partitions 
+-dataframe are immutable 
+
+* one task takes one core so i excutor have 2 cores  where parallel excuitor have 4 cores means 4 tasks 
+
+ structured api are of two types 
+
+1 logical planning
+2 physical planning 
+
+
 
 
 //////////////////////////////5///////////////////////hands-on ///////////////
