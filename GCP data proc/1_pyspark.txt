@@ -250,3 +250,5 @@ A DataFrame can be thought of as a spreadsheet with a defined structure (the sch
 
 
 //////////////////////////////5///////////////////////hands-on ///////////////
+
+70c8d35aabd5e6c49b41717c8d5473ac39d1a660ce2f36b2⁠
