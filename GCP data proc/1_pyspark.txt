@@ -21,8 +21,9 @@ spark :
 spark components : 
 
 - RDD-----> low level api 
-- data frames --------> structured api 
--dataset
+- data frames , data set --------> structured api 
+- liberies and ecosysterm , structured streaming and analytics 
+
 
 
 
@@ -52,6 +53,39 @@ excuitor
 
 
 
+
+
+                   +-------------+
+                   |    User     |
+                   +-------------+
+                          |
+                          v
+                   +-------------+
+                   |   Driver    |
+                   +-------------+
+                     /     |     \
+                    /      |      \
+                   v       v       v
+
+     +---------------------------------------+
+     |               Executor 1              |   <-- JVM
+     |   [ Core ]     [ Core ]               |
+     +---------------------------------------+
+
+     +---------------------------------------+
+     |               Executor 2              |   <-- JVM
+     |   [ Core ]     [ Core ]               |
+     +---------------------------------------+
+
+     +---------------------------------------+
+     |               Executor 3              |   <-- JVM
+     |   [ Core ]     [ Core ]               |
+     +---------------------------------------+
+
+- here each core perform a task 
+
+
+
 ////////////////////////////3//////////////////////////////
 
 
@@ -72,8 +106,6 @@ transformation are of two types
 
 1.narrow transformation
 2.wide transformation
-
-
 
 
 
@@ -101,20 +133,26 @@ transformation are of two types
 | Final data|
 +-----------+
 
+
+ - this is how  transformation are done
+
+
  # narrow Transformation
 A narrow transformation is characterized by the relationship between the input data partitions and the resulting data partitions.
 • In a narrow transformation, one data partition contributes to only one data partition.
 • It can be described as contributing to at most one partition
-
+- here  one  to oone partition
 
 #Wide Transformation
 A wide transformation involves a more complex relationship between the partitions, often requiring data movement across the cluster.
 • In a wide transformation, one partition can contribute to more than one partitions
-
+- here the partitions are moved to multiple partiations  
 
 
 
 # actions 
+
+
 
 Spark actions are crucial components in the Spark execution workflow, as they are responsible for triggering the actual computation defined by the preceding transformations.
 Definition and Purpose
@@ -127,10 +165,14 @@ The function of actions is inseparable from Spark's preference for lazy evaluati
 • Spark will wait until an action is called, and only when an action is called does the transformation graph get executed.
 • This waiting is necessary to allow Spark to optimize and plan the resources properly, which leads to executional benefits.
 Types of Actions
+
+
 There are basically three types of common actions:
 1. To view the data in the console.
 2. To collect the data in Native languages.
 3. If we write the data in output data sources.
+
+
 Illustrative Example
 To understand the necessity of actions in the context of lazy evaluation, the sources provide an analogy of a sandwich shop:
 • If a customer orders a sandwich (the transformations) but keeps changing the order, resources would be wasted if preparation started immediately.
@@ -145,6 +187,7 @@ In summary, while transformations define what needs to be done, the action is th
 
 The Spark session is a fundamental component in Spark execution.
 Based on the sources, here is an explanation of the Spark session:
+
 1. Entry Point and Responsibility:
     ◦ The Spark session is basically the entry point for the Spark execution.
     ◦ It is responsible to execute code in the cluster.
@@ -161,12 +204,16 @@ Based on the sources, here is an explanation of the Spark session:
 
 
 
-The Data Frame is the most important structured API in Spark and represents a fundamental structure for working with data.
+The Data Frame is the most important structured API in Spark and represents a fundamental structure for working with data.******
+
 Here is a detailed explanation of DataFrames based on the source:
-Structure and Definition
+
+Structure and Definition: 
+
 • API Type: DataFrames are the most common structured API and are built upon low-level APIs, such as RDD.
 • Appearance: A DataFrame looks like a simple table, consisting of rows and columns.
 • Schema: A schema is associated with a data frame. This schema means that each column will have its own metadata.
+
 Storage and Parallelism
 • Partitions: The data within DataFrames are stored in partitions.
 • Parallel Execution: The use of partitions is the main reason why Spark prefers keeping data in partitions. When a transformation is applied and an action is called on a DataFrame:
