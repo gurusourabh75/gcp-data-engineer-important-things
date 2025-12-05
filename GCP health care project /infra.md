@@ -47,4 +47,14 @@ fot b
 
 
 
+# uploading data to gcs 
 
+<img width="2056" height="877" alt="Screenshot 2025-12-05 at 12 32 12 PM" src="https://github.com/user-attachments/assets/a813b876-fc08-4e54-b4dc-20f97c72b8b3" />
+
+from github files to gcs 
+
+# later we import the data into perticular table in sql 
+
+<img width="2056" height="1166" alt="Screenshot 2025-12-05 at 12 33 20 PM" src="https://github.com/user-attachments/assets/e5ab7016-8d4e-44a9-b648-ff2e35e7c00a" />
+
+like this we importing all the data into tables  for patient , encounters , providers , transactions ,
