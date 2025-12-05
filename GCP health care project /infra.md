@@ -59,3 +59,8 @@ from github files to gcs
 <img width="2056" height="1166" alt="Screenshot 2025-12-05 at 12 33 20 PM" src="https://github.com/user-attachments/assets/e5ab7016-8d4e-44a9-b648-ff2e35e7c00a" />
 
 like this we importing all the data into tables  for patient , encounters , providers , transactions ,
+
+- now two  data sources are ready
+
+  # complete gcs look
+  <img width="2055" height="822" alt="Screenshot 2025-12-05 at 1 27 00 PM" src="https://github.com/user-attachments/assets/65cd6300-726a-4b2d-ab7b-11843a5a038a" />
