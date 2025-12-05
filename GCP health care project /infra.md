@@ -35,10 +35,11 @@
 fot b 
 
 
-# create user for a database and b database 
+# create user for a database a and b database 
 
 <img width="1991" height="949" alt="Screenshot 2025-12-04 at 7 36 44 PM" src="https://github.com/user-attachments/assets/b83f2ad5-d7ba-49d6-861c-85227814f0c0" />
 -username = myuser, pass=n4K3C5]ZEFEv]|dv - for a database
+- username=myuser,pass=#2UfPF]V%\=6x|&E - for b database 
 
 
 # cloud sql main if
