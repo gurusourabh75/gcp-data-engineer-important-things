@@ -3,15 +3,20 @@ we have spotify data in gcs from that we brought inro biqquary dataset with alre
 
  medallion architure 
 
+* always first write ur base query 
+
 # bronz layer 
+
+
 ---- null handling --- track name shoulfd not have to be null 
 ----de-duplication -- remove the duplicates 
 ---- un-nessary coloumns ---
 ---- aggresion ---- like converting  mili secounds into sec 
 
 
-* always first write ur base query 
-
+- IS NOT NULL
+- DISTINCT :  IT WILL PICK ONLY UNIQUE RECORDS FROM THE  DATA SET   
+- IF YOU WANT TO EDIT  THE GIVEN DATA AND STORE IT IN new column then use   {    round( edit ) as new_columnname }
 
 
 # SILVER  layer 
