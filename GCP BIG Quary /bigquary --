@@ -88,5 +88,7 @@ limitation :
 
 
 
+--- important things in bq 
 
+-- you  change the schema names as  ex :  schema  are id ,, name, date  ---->  id as track_id, name as track name , date as track date 
 
