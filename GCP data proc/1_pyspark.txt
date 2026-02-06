@@ -15,7 +15,14 @@ spark :
 - it support major language like python and java and scala 
 - 100 times faster than hadoop 
 - process data using graph ( in memory )
+      or  
 
+- its a programing frame work
+- distribution data 
+- parallel processing engine 
+- big data tools
+-in memory -compation ----> 100% faster than  map redection 
+- support java , python , mlib , sql 
 
 
 spark components : 
