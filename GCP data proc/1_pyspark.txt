@@ -1,5 +1,7 @@
 Data proc work on pyspark engine
 
+!pip import pyspark
+
 
 why an individual should look into and learn pyspark 
 
