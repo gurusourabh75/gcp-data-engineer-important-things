@@ -58,3 +58,23 @@ table_id = "regular-use-486315.gold_region.pyspark_example"
     .mode("overwrite")
     .save()
 )
+
+
+# to sql 
+
+
+mysql_properties = {
+    "driver": "com.mysql.cj.jdbc.Driver",
+    "url": "jdbc:mysql://<HOST-IP>:3306/<DB-NAME>",
+    "user": "mysql",
+    "password": "mypass",
+    "table": "pysparkTable"
+}
+
+(
+    df.write
+    .format("jdbc")
+    .options(**mysql_properties)
+    .mode("overwrite")
+    .save()
+)
