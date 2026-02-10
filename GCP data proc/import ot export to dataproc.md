@@ -8,6 +8,8 @@
 
 # to export 
 
-- sink_source_path=" "
+- "sink_source_path=" "
 - same for text , qaq, csv, json, other files 
-- df.write.csv(sink_source_path,header=True)
+- "df.write.csv(sink_source_path,header=True)"
+- while export pyspark deveide data into parts  if you want iit in a single file  use coalesce
+- -df.coalesce(1).write.csv(sink_source_path,header=True)
