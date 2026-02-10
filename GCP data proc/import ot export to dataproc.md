@@ -38,4 +38,23 @@
  
 
 " df.rdd.getNumPartitions() "
-- to know number of partitions 
+- to know number of partitions
+
+
+
+
+# to load the dtaa to bigquery from data proc 
+
+- copy table id from biguery
+-  later add extension to cretae table for that id
+-
+-  
+table_id = "regular-use-486315.gold_region.pyspark_example"
+
+(
+    df.write.format("bigquery")
+    .option("table", table_id)
+    .option("temporaryGcsBucket", "class14-files")  # bucket name only
+    .mode("overwrite")
+    .save()
+)
